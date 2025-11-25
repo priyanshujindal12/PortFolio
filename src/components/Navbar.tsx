@@ -57,12 +57,15 @@ const Navbar = ({
       </ul>
 
       {/* RIGHT — Resume Button */}
-      <button className="text-white flex items-center gap-2 
-                         bg-white/10 px-5 py-2 rounded-full 
-                         hover:bg-white/20 transition">
+      <a
+        href="/Resume.pdf"                // <-- file placed into public/resume.pdf
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full hover:bg-white/20 transition"
+      >
         <FiDownload size={18} />
         Resume
-      </button>
+      </a>
     </nav>
   );
 };
