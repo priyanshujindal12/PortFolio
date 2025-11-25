@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Dock from "./components/Dock";
-import { VscHome, VscArchive, VscAccount, VscSettingsGear } from "react-icons/vsc";
+import { VscHome, VscArchive, VscAccount } from "react-icons/vsc";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import LiquidEther from "./components/Liquid";
 import Home from "./components/Home";
