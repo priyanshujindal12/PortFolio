@@ -1,0 +1,32 @@
+@import "tailwindcss";
+/* index.css (near top) */
+html, body, #root {
+  height: 100%;
+  overflow-x: hidden; 
+      /* keep horizontal scroll gone */
+       /* ensure vertical scrolling is allowed */
+}
+/* ===========================
+   Custom Vertical Scrollbar
+   =========================== */
+
+/* width of scrollbar */
+::-webkit-scrollbar {
+  width: 10px;      /* change thickness */
+}
+
+/* scrollbar track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);  /* slight visible track */
+}
+
+/* scrollbar thumb (the moving bar) */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);   /* color of the bar */
+  border-radius: 10px;                    /* rounded edges */
+}
+
+/* on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
