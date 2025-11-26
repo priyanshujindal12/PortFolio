@@ -9,7 +9,6 @@ interface LCStats {
   mediumSolved: number;
   hardSolved: number;
 }
-
 export default function CodingJourney() {
   const [lcStats, setLcStats] = useState<LCStats | null>(null);
 
