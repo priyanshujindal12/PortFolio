@@ -74,11 +74,7 @@ const Home = () => {
                         showMobileWarning={false}
                         showTooltip={false}
                         displayOverlayContent={false}
-                        overlayContent={
-                            <p className="tilted-card-demo-text">
-                                Kendrick Lamar - GNX
-                            </p>
-                        }
+                       
                     />
 
                 </motion.div>
