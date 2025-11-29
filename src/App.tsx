@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { Profiler, useRef } from "react";
 import Dock from "./components/Dock";
 import { VscHome,  VscAccount } from "react-icons/vsc";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
@@ -10,6 +10,9 @@ import About from "./components/About";
 import Background from "./components/Background";
 import Skills from "./components/Skill";
 import CodingJourney from "./components/CodingJourney";
+import Project from "./components/Project";
+
+// src/main.tsx
 
 
 function App() {
@@ -21,14 +24,22 @@ function App() {
   const achievementsRef = useRef<HTMLElement>(null);
   const codingRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  const items = [
-    { icon: <VscHome size={18} />, label: 'Home', onClick: () => alert('Home!') },
-    { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => alert('Profile!') },
-    { icon: <FaGithub size={18} />, label: 'GitHub', onClick: () => window.open("https://github.com/priyanshujindal12", "_blank") },
-    { icon: <FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => window.open("https://www.linkedin.com/in/priyanshu-jindal-38a67a324/", "_blank") },
-    { icon: <SiLeetcode size={18} />, label: 'LeetCode', onClick: () => window.open("https://leetcode.com/priyanshujindal009/", "_blank") },
-    { icon: <FaTwitter size={18} />, label: 'Twitter', onClick: () => window.open("https://twitter.com/", "_blank") },
-  ];
+  const scrollToRef = (ref: any) => {
+  ref?.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
+const items = [
+  { icon: <VscHome size={18} />, label: 'Home', onClick: () => scrollToRef(homeRef) },
+  { icon: <VscAccount size={18} />, label: 'About', onClick: () => scrollToRef(aboutRef) },
+  { icon: <FaGithub size={18} />, label: 'GitHub', onClick: () => window.open("https://github.com/priyanshujindal12", "_blank") },
+  { icon: <FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => window.open("https://www.linkedin.com/in/priyanshu-jindal-38a67a324/", "_blank") },
+  { icon: <SiLeetcode size={18} />, label: 'LeetCode', onClick: () => window.open("https://leetcode.com/u/priyanshujindal009/") },
+  { icon: <FaTwitter size={18} />, label: 'Twitter', onClick: () => window.open("https://twitter.com/", "_blank") },
+];
+
 
   return (
     <div className="relative">
@@ -73,11 +84,13 @@ function App() {
       <section ref={codingRef}>
         <CodingJourney />
       </section>
-
-
-
+        <section ref={projectsRef}>
+            <Project/>
+        </section>
+      
+      <div className="mb-20"></div>
       {/* DOCK (ALWAYS ON BOTTOM) */}
-      <div className="fixed bottom-1 left-1/2 -translate-x-1/2 z-[9999]">
+      <div className=" fixed bottom-1 left-1/2 -translate-x-1/2 z-[9999]">
         <Dock
           items={items}
           panelHeight={68}

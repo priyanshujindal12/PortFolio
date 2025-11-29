@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import myImage from "./image.jpg";
+import myImage from "../assets/profile.jpeg";
 import TiltedCard from "./TiltedCard";
 
 const Home = () => {
