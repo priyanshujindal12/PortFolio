@@ -1,4 +1,4 @@
-import { Profiler, useRef } from "react";
+import {  useRef } from "react";
 import Dock from "./components/Dock";
 import { VscHome,  VscAccount } from "react-icons/vsc";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
